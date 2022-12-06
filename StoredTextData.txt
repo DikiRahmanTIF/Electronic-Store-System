@@ -149,3 +149,27 @@ Harga Produk : 1000000000
 Kuantitas Pesanan : 100000000
 Total Harga : 1569325056
 
+
+Merek Produk : 14
+Kustomer :12
+Jenis Produk : PC
+Harga Produk : 14
+Kuantitas Pesanan : 14
+Total Harga : 196
+
+
+Merek Produk : Lenovo
+Kustomer :De
+Jenis Produk : PC
+Harga Produk : 12000000
+Kuantitas Pesanan : 3
+Total Harga : 36000000
+
+
+Kustomer :12
+Merek Produk : 1314
+Jenis Produk : PC
+Harga Produk : 11111
+Kuantitas Pesanan : 14
+Total Harga : 155554
+

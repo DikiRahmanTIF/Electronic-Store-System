@@ -43,12 +43,12 @@ public class MEOnlineStore {
                 objMEO.setJenisproduk(getjenisproduk);
                 objMEO.setHarga(Integer.parseInt(String.valueOf(getharga)));
                 objMEO.setJumlah(Integer.parseInt(String.valueOf(getjumlahbarang)));
-                
-                totalHarga = String.valueOf(getharga*getjumlahbarang);
-                
-                tableModel.addRow(new Object[] {getmerekproduk, getkustomer, getjenisproduk, getharga, getjumlahbarang, totalHarga});
 
-                String dataInput = "\nMerek Produk : " +getmerekproduk + "\nKustomer :" +getkustomer + "\nJenis Produk : " +getjenisproduk + "\nHarga Produk : " +getharga +"\nKuantitas Pesanan : " +getjumlahbarang + "\nTotal Harga : "+ totalHarga+"\n\n";
+                totalHarga = String.valueOf(getharga * getjumlahbarang);
+
+                tableModel.addRow(new Object[]{getkustomer, getmerekproduk, getjenisproduk, getharga, getjumlahbarang, totalHarga});
+
+                String dataInput = "\nKustomer :" + getkustomer + "\nMerek Produk : " + getmerekproduk + "\nJenis Produk : " + getjenisproduk + "\nHarga Produk : " + getharga + "\nKuantitas Pesanan : " + getjumlahbarang + "\nTotal Harga : " + totalHarga + "\n\n";
                 FileWriter fw;
                 try {
                     fw = new FileWriter("StoredTextData.txt", true);
@@ -67,24 +67,28 @@ public class MEOnlineStore {
                 }
 
             }
+
         });
     }
-        private void initComponents(){
 
-            Object[] tableColumn = {"Merek Produk",
-                    "Kustomer",
-                    "Jenis Produk",
-                    "Harga",
-                    "Kuantitas Pesanan",
-                    "Total Harga"};
+    private void initComponents() {
 
-            Object[][] row = {};
+        Object[] tableColumn = {"Kustomer",
+                "Merek Produk",
+                "Jenis Produk",
+                "Harga",
+                "Kuantitas Pesanan",
+                "Total Harga"};
 
-            tableModel = new DefaultTableModel(row, tableColumn);
-            tabelData.setModel(tableModel);
-            tabelData.setAutoCreateRowSorter(true);
+        Object[][] row = {};
 
-        }
+        tableModel = new DefaultTableModel(row, tableColumn);
+        tabelData.setModel(tableModel);
+        tabelData.setAutoCreateRowSorter(true);
+
+    }
+
+
 
     public JPanel getRoot() {
         return root;

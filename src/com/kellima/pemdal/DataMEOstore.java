@@ -8,8 +8,6 @@ public class DataMEOstore {
     private String jenisproduk;
     private int harga;
     private int jumlah;
-    private int TotalHarga;
-    private NumberFormat nf;
 
     public String getMerek() {
         return merek;
@@ -49,16 +47,6 @@ public class DataMEOstore {
 
     public void setJumlah(int jumlah) {
         this.jumlah = jumlah;
-    }
-
-    public int HargaTotalPemesanan(){
-        int TotalHarga = getHarga()*getJumlah();
-        restartTotalHarga();
-        return Integer.parseInt("Rp."+nf.format(TotalHarga));
-    }
-
-    public void restartTotalHarga() {
-        this.TotalHarga = 0;
     }
 
 }
