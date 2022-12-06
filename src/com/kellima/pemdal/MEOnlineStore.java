@@ -1,9 +1,7 @@
 package com.kellima.pemdal;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -45,13 +43,18 @@ public class MEOnlineStore {
                 objMEO.setHarga(Integer.parseInt(String.valueOf(getharga)));
                 objMEO.setJumlah(Integer.parseInt(String.valueOf(getjumlahbarang)));
 
+                //Penjumlahan Harga Total
                 totalHarga = String.valueOf(getharga * getjumlahbarang);
 
+                //Menambah data di row table sesuai data yang telah diisi user
                 tableModel.addRow(new Object[]{getkustomer, getmerekproduk, getjenisproduk, getharga, getjumlahbarang, totalHarga});
 
+                //data yg akan diinput ke Database
                 String dataInput = "\nKustomer :" + getkustomer + "\nMerek Produk : " + getmerekproduk + "\nJenis Produk : " + getjenisproduk + "\nHarga Produk : " + getharga + "\nKuantitas Pesanan : " + getjumlahbarang + "\nTotal Harga : " + totalHarga + "\n\n";
                 String Temp = objMEO.getKustomer() + "#" + objMEO.getMerek() + "#" + objMEO.getJenisproduk() + "#" + objMEO.getHarga() + "#" + objMEO.getJumlah() + "#" + objMEO.hargaAkhir() + "\n";
-                FileWriter fw=null;
+
+                //Write data ke File StoredTextDatabase.txt dan TempStrArr
+                FileWriter fw;
                 try {
                     fw = new FileWriter("StoredTextDatabase.txt", true);
                     fw.write(dataInput);
@@ -72,6 +75,7 @@ public class MEOnlineStore {
         });
     }
 
+    //Initializer Komponen Tabel
     private void initComponents() {
 
         Object[] tableColumn = {"Kustomer",
@@ -81,8 +85,9 @@ public class MEOnlineStore {
                 "Kuantitas Pesanan",
                 "Total Harga"};
 
-        Object[][] row = {};
-
+        /*Munculkan data di TempStrArr ke tabel
+        Serta membuat data tetap di tabel walau aplikasi telah di close
+         */
         try {
             tableModel = new DefaultTableModel(new DataMEOstore().getmObject(), tableColumn);
         } catch (FileNotFoundException e) {
@@ -92,7 +97,6 @@ public class MEOnlineStore {
         tabelData.setAutoCreateRowSorter(true);
 
     }
-
 
     public JPanel getRoot() {
         return rootPanel;

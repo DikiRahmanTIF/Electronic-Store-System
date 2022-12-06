@@ -2,9 +2,6 @@ package com.kellima.pemdal;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class DataMEOstore {
@@ -13,8 +10,9 @@ public class DataMEOstore {
     private String jenisproduk;
     private int harga;
     private int jumlah;
-    private int hargaAkhir;
 
+
+    //Getter and Setter
     public String getMerek() {
         return merek;
     }
@@ -55,6 +53,7 @@ public class DataMEOstore {
         this.jumlah = jumlah;
     }
 
+    //Untuk object table supaya muncul
     private String[][] mObject;
 
     public String[][] getmObject() throws FileNotFoundException {
@@ -62,6 +61,7 @@ public class DataMEOstore {
         return mObject;
     }
 
+    //Membaca Data di TempStrArr menggunakan scanner
     public void readingData() throws FileNotFoundException {
         File file = new File(System.getProperty("user.dir") + "/src/TEMPStrArr.txt");
         Scanner sc2 = new Scanner(file);
@@ -73,25 +73,20 @@ public class DataMEOstore {
             totalLine += 1;
         }
 
-        String[][] StoDArray = new String[totalLine][7];
+        String[][] StoDArray = new String[totalLine][6];
 
         int startLoopMain = 0;
         while (sc.hasNextLine()) {
-            String sObject[] = String.valueOf(sc.nextLine()).split("#");
-            for (int i = 0; i < sObject.length; i++) {
-                StoDArray[startLoopMain][i] = sObject[i];
-            }
+            String[] sObject = String.valueOf(sc.nextLine()).split("#");
+            System.arraycopy(sObject, 0, StoDArray[startLoopMain], 0, sObject.length);
             startLoopMain++;
         }
         this.mObject = StoDArray;
     }
 
+    //Penjumlahan Harga total
     public int hargaAkhir(){
         return this.harga * getJumlah();
-    }
-
-    public void restartHarga(){
-        this.harga = 0;
     }
 
 }
