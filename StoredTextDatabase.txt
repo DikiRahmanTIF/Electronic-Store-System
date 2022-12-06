@@ -1,0 +1,15 @@
+Kustomer :Tes
+Merek Produk : Tes
+Jenis Produk : PC
+Harga Produk : 40
+Kuantitas Pesanan : 5
+Total Harga : 200
+
+
+Kustomer :Tes
+Merek Produk : Tes2
+Jenis Produk : HandPhone
+Harga Produk : 1500000
+Kuantitas Pesanan : 3
+Total Harga : 4500000
+

@@ -6,6 +6,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Objects;
@@ -18,7 +19,7 @@ public class MEOnlineStore {
     private JButton buttonsave;
     private JTable tabelData;
     private JComboBox comboboxjenisproduk;
-    private JPanel root;
+    private JPanel rootPanel;
     private final DataMEOstore objMEO;
     private String totalHarga;
 
@@ -49,18 +50,18 @@ public class MEOnlineStore {
                 tableModel.addRow(new Object[]{getkustomer, getmerekproduk, getjenisproduk, getharga, getjumlahbarang, totalHarga});
 
                 String dataInput = "\nKustomer :" + getkustomer + "\nMerek Produk : " + getmerekproduk + "\nJenis Produk : " + getjenisproduk + "\nHarga Produk : " + getharga + "\nKuantitas Pesanan : " + getjumlahbarang + "\nTotal Harga : " + totalHarga + "\n\n";
-                FileWriter fw;
+                String Temp = objMEO.getKustomer() + "#" + objMEO.getMerek() + "#" + objMEO.getJenisproduk() + "#" + objMEO.getHarga() + "#" + objMEO.getJumlah() + "#" + objMEO.hargaAkhir() + "\n";
+                FileWriter fw=null;
                 try {
-                    fw = new FileWriter("StoredTextData.txt", true);
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-                try {
+                    fw = new FileWriter("StoredTextDatabase.txt", true);
                     fw.write(dataInput);
+                    fw.close();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
                 try {
+                    fw = new FileWriter(System.getProperty("user.dir") + "/src/TEMPStrArr.txt", true);
+                    fw.write(Temp);
                     fw.close();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
@@ -82,15 +83,24 @@ public class MEOnlineStore {
 
         Object[][] row = {};
 
-        tableModel = new DefaultTableModel(row, tableColumn);
+        try {
+            tableModel = new DefaultTableModel(new DataMEOstore().getmObject(), tableColumn);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         tabelData.setModel(tableModel);
         tabelData.setAutoCreateRowSorter(true);
 
+        for(int i = 0; i < 6; i++) {
+            TableColumn col = tabelData.getColumnModel().getColumn(i);
+            DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
+            dtcr.setHorizontalAlignment(SwingConstants.CENTER);
+            col.setCellRenderer(dtcr);
+        }
     }
 
 
-
     public JPanel getRoot() {
-        return root;
+        return rootPanel;
     }
 }
