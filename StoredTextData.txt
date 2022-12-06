@@ -1,0 +1,151 @@
+Merek Produk : tes
+Kustomer :tes
+Jenis Produk : PC
+Harga Produk : 10
+Kuantitas Pesanan : 3
+Total Harga : 30
+
+
+Merek Produk : tes1
+Kustomer :tes1
+Jenis Produk : PC
+Harga Produk : 12
+Kuantitas Pesanan : 4
+Total Harga : 48
+
+
+Merek Produk : tes2
+Kustomer :tes2
+Jenis Produk : PC
+Harga Produk : 10
+Kuantitas Pesanan : 5
+Total Harga : 50
+
+
+Merek Produk : tes3
+Kustomer :tes3
+Jenis Produk : PC
+Harga Produk : 10
+Kuantitas Pesanan : 5
+Total Harga : 50
+
+
+Merek Produk : tes3
+Kustomer :tes3
+Jenis Produk : PC
+Harga Produk : 6
+Kuantitas Pesanan : 5
+Total Harga : 30
+
+
+Merek Produk : 12
+Kustomer :131
+Jenis Produk : PC
+Harga Produk : 31
+Kuantitas Pesanan : 13
+Total Harga : 403
+
+
+Merek Produk : 1214
+Kustomer :13114
+Jenis Produk : PC
+Harga Produk : 3114
+Kuantitas Pesanan : 415
+Total Harga : 1292310
+
+
+Merek Produk : 151
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 311411
+Kuantitas Pesanan : 41513
+Total Harga : 42702955
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 311566
+Kuantitas Pesanan : 1
+Total Harga : 311566
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 311566
+Kuantitas Pesanan : 10
+Total Harga : 3115660
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 1000000
+Kuantitas Pesanan : 1000
+Total Harga : 1000000000
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 1000000
+Kuantitas Pesanan : 10000
+Total Harga : 1410065408
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 1000000
+Kuantitas Pesanan : 100000
+Total Harga : 1215752192
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 1000000
+Kuantitas Pesanan : 1000000
+Total Harga : -727379968
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 1000000
+Kuantitas Pesanan : 10000000
+Total Harga : 1316134912
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 1000000
+Kuantitas Pesanan : 100000000
+Total Harga : 276447232
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 10000000
+Kuantitas Pesanan : 100000000
+Total Harga : -1530494976
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 100000000
+Kuantitas Pesanan : 100000000
+Total Harga : 1874919424
+
+
+Merek Produk : 15111515
+Kustomer :131141144
+Jenis Produk : PC
+Harga Produk : 1000000000
+Kuantitas Pesanan : 100000000
+Total Harga : 1569325056
+

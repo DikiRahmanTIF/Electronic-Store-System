@@ -1,11 +1,14 @@
 package com.kellima.pemdal;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Objects;
 
 public class MEOnlineStore {
     private JTextField textbrandproduk;
@@ -16,8 +19,7 @@ public class MEOnlineStore {
     private JTable tabelData;
     private JComboBox comboboxjenisproduk;
     private JPanel root;
-    private int HargaTotal;
-    private DataMEOstore objMEO;
+    private final DataMEOstore objMEO;
     private String totalHarga;
 
     private DefaultTableModel tableModel;
@@ -32,7 +34,7 @@ public class MEOnlineStore {
             public void actionPerformed(ActionEvent e) {
                 String getmerekproduk = textbrandproduk.getText();
                 String getkustomer = textKustomer.getText();
-                String getjenisproduk = comboboxjenisproduk.getSelectedItem().toString();
+                String getjenisproduk = Objects.requireNonNull(comboboxjenisproduk.getSelectedItem()).toString();
                 int getharga = Integer.parseInt(textharga.getText());
                 int getjumlahbarang = Integer.parseInt(textjumlah.getText());
 
@@ -47,7 +49,7 @@ public class MEOnlineStore {
                 tableModel.addRow(new Object[] {getmerekproduk, getkustomer, getjenisproduk, getharga, getjumlahbarang, totalHarga});
 
                 String dataInput = "\nMerek Produk : " +getmerekproduk + "\nKustomer :" +getkustomer + "\nJenis Produk : " +getjenisproduk + "\nHarga Produk : " +getharga +"\nKuantitas Pesanan : " +getjumlahbarang + "\nTotal Harga : "+ totalHarga+"\n\n";
-                FileWriter fw = null;
+                FileWriter fw;
                 try {
                     fw = new FileWriter("StoredTextData.txt", true);
                 } catch (IOException ex) {
