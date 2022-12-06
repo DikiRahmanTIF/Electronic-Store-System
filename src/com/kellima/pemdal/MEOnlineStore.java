@@ -85,7 +85,7 @@ public class MEOnlineStore {
                 "Kuantitas Pesanan",
                 "Total Harga"};
 
-        /*Munculkan data di TempStrArr ke tabel
+        /*Munculkan tabel dan data di TempStrArr ke tabel
         Serta membuat data tetap di tabel walau aplikasi telah di close
          */
         try {
@@ -98,6 +98,7 @@ public class MEOnlineStore {
 
     }
 
+    //RootPanel
     public JPanel getRoot() {
         return rootPanel;
     }
