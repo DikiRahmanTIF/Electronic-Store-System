@@ -78,7 +78,9 @@ public class DataMEOstore {
         int startLoopMain = 0;
         while (sc.hasNextLine()) {
             String[] sObject = String.valueOf(sc.nextLine()).split("#");
-            System.arraycopy(sObject, 0, StoDArray[startLoopMain], 0, sObject.length);
+            for (int i = 0; i < sObject.length; i++) {
+                StoDArray[startLoopMain][i] = sObject[i];
+            }
             startLoopMain++;
         }
         this.mObject = StoDArray;
