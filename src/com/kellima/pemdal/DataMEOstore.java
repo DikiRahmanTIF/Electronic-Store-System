@@ -62,18 +62,6 @@ public class DataMEOstore {
         return mObject;
     }
 
-    public void insertingDataToFile(String inputtedData) throws IOException {
-        FileWriter fw = new FileWriter("FileDataBase.txt", true);
-        fw.write(inputtedData);
-        fw.close();
-    }
-
-    public void storedDataToTempFile(String inputtedData) throws IOException {
-        FileWriter fw = new FileWriter(System.getProperty("user.dir") + "/src/TEMPStrArr.txt", true);
-        fw.write(inputtedData);
-        fw.close();
-    }
-
     public void readingData() throws FileNotFoundException {
         File file = new File(System.getProperty("user.dir") + "/src/TEMPStrArr.txt");
         Scanner sc2 = new Scanner(file);
@@ -96,14 +84,6 @@ public class DataMEOstore {
             startLoopMain++;
         }
         this.mObject = StoDArray;
-    }
-
-    public void generateList(){
-        for (int i = 0;i<this.mObject.length;i++){
-            for (int b = 0;b < this.mObject[i].length;b++){
-                System.out.println(this.mObject[i][b]);
-            }
-        }
     }
 
     public int hargaAkhir(){

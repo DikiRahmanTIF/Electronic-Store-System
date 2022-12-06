@@ -91,12 +91,6 @@ public class MEOnlineStore {
         tabelData.setModel(tableModel);
         tabelData.setAutoCreateRowSorter(true);
 
-        for(int i = 0; i < 6; i++) {
-            TableColumn col = tabelData.getColumnModel().getColumn(i);
-            DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
-            dtcr.setHorizontalAlignment(SwingConstants.CENTER);
-            col.setCellRenderer(dtcr);
-        }
     }
 
 
