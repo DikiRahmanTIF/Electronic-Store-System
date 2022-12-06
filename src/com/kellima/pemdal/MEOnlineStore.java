@@ -16,8 +16,9 @@ public class MEOnlineStore {
     private JTable tabelData;
     private JComboBox comboboxjenisproduk;
     private JPanel root;
-
+    private int HargaTotal;
     private DataMEOstore objMEO;
+    private String totalHarga;
 
     private DefaultTableModel tableModel;
 
@@ -32,18 +33,20 @@ public class MEOnlineStore {
                 String getmerekproduk = textbrandproduk.getText();
                 String getkustomer = textKustomer.getText();
                 String getjenisproduk = comboboxjenisproduk.getSelectedItem().toString();
-                String getharga = textharga.getText();
-                String getjumlahbarang = textjumlah.getText();
+                int getharga = Integer.parseInt(textharga.getText());
+                int getjumlahbarang = Integer.parseInt(textjumlah.getText());
 
                 objMEO.setMerek(getmerekproduk);
                 objMEO.setKustomer(getkustomer);
                 objMEO.setJenisproduk(getjenisproduk);
-                objMEO.setHarga(getharga);
-                objMEO.setJumlah(getjumlahbarang);
+                objMEO.setHarga(Integer.parseInt(String.valueOf(getharga)));
+                objMEO.setJumlah(Integer.parseInt(String.valueOf(getjumlahbarang)));
+                
+                totalHarga = String.valueOf(getharga*getjumlahbarang);
+                
+                tableModel.addRow(new Object[] {getmerekproduk, getkustomer, getjenisproduk, getharga, getjumlahbarang, totalHarga});
 
-                tableModel.addRow(new Object[] {getmerekproduk, getkustomer, getjenisproduk, getharga, getjumlahbarang});
-
-                String dataInput = "\nMerek Produk : " +getmerekproduk + "\nKustomer :" +getkustomer + "\nJenis Produk : " +getjenisproduk + "\nHarga Produk : " +getharga +"\nKuantitas Pesanan : " +getjumlahbarang + "\n\n";
+                String dataInput = "\nMerek Produk : " +getmerekproduk + "\nKustomer :" +getkustomer + "\nJenis Produk : " +getjenisproduk + "\nHarga Produk : " +getharga +"\nKuantitas Pesanan : " +getjumlahbarang + "\nTotal Harga : "+ totalHarga+"\n\n";
                 FileWriter fw = null;
                 try {
                     fw = new FileWriter("StoredTextData.txt", true);
@@ -70,7 +73,8 @@ public class MEOnlineStore {
                     "Kustomer",
                     "Jenis Produk",
                     "Harga",
-                    "Kuantitas Pesanan"};
+                    "Kuantitas Pesanan",
+                    "Total Harga"};
 
             Object[][] row = {};
 

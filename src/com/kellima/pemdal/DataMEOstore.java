@@ -1,11 +1,15 @@
 package com.kellima.pemdal;
 
+import java.text.NumberFormat;
+
 public class DataMEOstore {
     private String merek;
     private String kustomer;
     private String jenisproduk;
-    private String harga;
-    private String jumlah;
+    private int harga;
+    private int jumlah;
+    private int TotalHarga;
+    private NumberFormat nf;
 
     public String getMerek() {
         return merek;
@@ -31,19 +35,30 @@ public class DataMEOstore {
         this.jenisproduk = jenisproduk;
     }
 
-    public String getHarga() {
+    public int getHarga() {
         return harga;
     }
 
-    public void setHarga(String harga) {
+    public void setHarga(int harga) {
         this.harga = harga;
     }
 
-    public String getJumlah() {
+    public int getJumlah() {
         return jumlah;
     }
 
-    public void setJumlah(String jumlah) {
+    public void setJumlah(int jumlah) {
         this.jumlah = jumlah;
     }
+
+    public int HargaTotalPemesanan(){
+        int TotalHarga = getHarga()*getJumlah();
+        restartTotalHarga();
+        return Integer.parseInt("Rp."+nf.format(TotalHarga));
+    }
+
+    public void restartTotalHarga() {
+        this.TotalHarga = 0;
+    }
+
 }

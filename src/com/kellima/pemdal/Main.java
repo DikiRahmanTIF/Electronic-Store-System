@@ -7,7 +7,7 @@ public class Main {
         JFrame jFrame = new JFrame();
         jFrame.setContentPane(new MEOnlineStore().getRoot());
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        jFrame.setSize(500,300);
+        jFrame.setSize(640,480);
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
 
